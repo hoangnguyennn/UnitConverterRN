@@ -16,7 +16,12 @@ const Home = ({navigation}) => {
             <MenuListItem
               label={item.label}
               icon={item.icon}
-              onPress={() => navigation.navigate('UnitConversion')}
+              onPress={() =>
+                navigation.navigate('UnitConversion', {
+                  id: item.id,
+                  title: item.label,
+                })
+              }
             />
           </View>
         )}

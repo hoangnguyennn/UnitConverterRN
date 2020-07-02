@@ -12,8 +12,18 @@ const MainStack = ({navigation}) => {
         navigation.setOptions({gestureEnabled: route.name === 'Home'});
         return {};
       }}>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="UnitConversion" component={UnitConversion} />
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{title: 'Unit Converter'}}
+      />
+      <Stack.Screen
+        name="UnitConversion"
+        component={UnitConversion}
+        options={({route}) => ({
+          title: route.params.title,
+        })}
+      />
       <Stack.Screen name="Settings" component={Settings} />
     </Stack.Navigator>
   );

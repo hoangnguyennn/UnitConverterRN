@@ -2,7 +2,13 @@ import React from 'react';
 import {View, Text, TextInput, StyleSheet, Keyboard} from 'react-native';
 import {Picker} from '@react-native-community/picker';
 
-const UnitConversionInput = ({label}) => {
+const UnitConversionInput = ({
+  label,
+  list,
+  selected,
+  onPickerChange,
+  value,
+}) => {
   Keyboard.dismiss();
   return (
     <View style={styles.paddingContainer}>
@@ -11,16 +17,23 @@ const UnitConversionInput = ({label}) => {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.input}
-            value="123"
+            value={value.toString()}
             showSoftInputOnFocus={false}
           />
-          <Picker style={styles.picker}>
-            <Picker.Item label="Hi" value="Hi" />
-            <Picker.Item label="Hi" value="Hi" />
+          <Picker
+            style={styles.picker}
+            onValueChange={onPickerChange}
+            selectedValue={selected}>
+            {list &&
+              list.map((item, index) => (
+                <Picker.Item label={item.name} value={item} key={index} />
+              ))}
           </Picker>
         </View>
       </View>
-      <Text style={styles.hintText}>km - cm</Text>
+      <Text style={styles.hintText}>
+        {selected.name} - {selected.code}
+      </Text>
     </View>
   );
 };

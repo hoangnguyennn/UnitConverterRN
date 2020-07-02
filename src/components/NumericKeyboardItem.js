@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, TouchableNativeFeedback, StyleSheet} from 'react-native';
 
-const NumericKeyboardItem = ({content}) => {
+const NumericKeyboardItem = ({content, onPress}) => {
   return (
     <View style={styles.container}>
       {content !== null ? (
-        <TouchableNativeFeedback>
+        <TouchableNativeFeedback onPress={onPress}>
           <View style={styles.content}>
             <Text style={styles.text}>{content}</Text>
           </View>
