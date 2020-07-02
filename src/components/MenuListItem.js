@@ -7,11 +7,11 @@ import {
   StyleSheet,
 } from 'react-native';
 
-const MenuListItem = ({icon, label}) => {
+const MenuListItem = ({icon, label, onPress}) => {
   return (
     <View style={styles.shadowContainer}>
       <View style={styles.overflowContainer}>
-        <TouchableNativeFeedback>
+        <TouchableNativeFeedback onPress={onPress}>
           <View style={styles.container}>
             <Image style={styles.image} source={icon} />
             <Text>{label}</Text>

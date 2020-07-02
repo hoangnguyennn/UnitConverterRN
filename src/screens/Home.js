@@ -13,7 +13,11 @@ const Home = ({navigation}) => {
         numColumns={2}
         renderItem={({item}) => (
           <View style={styles.itemContainer}>
-            <MenuListItem label={item.label} icon={item.icon} />
+            <MenuListItem
+              label={item.label}
+              icon={item.icon}
+              onPress={() => navigation.navigate('UnitConversion')}
+            />
           </View>
         )}
         keyExtractor={item => `${item.id}`}
