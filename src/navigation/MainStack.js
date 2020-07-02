@@ -1,12 +1,23 @@
 import React from 'react';
+import {StyleSheet} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
+import Feather from 'react-native-vector-icons/Feather';
 
 import colors from '../constants/colors';
 import {Home, UnitConversion, Settings} from '../screens';
+import HeaderTitle from '../components/HeaderTitle';
 
 const Stack = createStackNavigator();
 
 const MainStack = ({navigation}) => {
+  const MenuIcon = (
+    <Feather
+      size={30}
+      name="menu"
+      style={styles.whiteIcon}
+      onPress={() => navigation.openDrawer()}
+    />
+  );
   return (
     <Stack.Navigator
       screenOptions={({route}) => {
@@ -21,7 +32,11 @@ const MainStack = ({navigation}) => {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{title: 'Unit Converter'}}
+        options={{
+          headerTitle: props => (
+            <HeaderTitle {...props} title="Unit Converter" icon={MenuIcon} />
+          ),
+        }}
       />
       <Stack.Screen
         name="UnitConversion"
@@ -34,5 +49,11 @@ const MainStack = ({navigation}) => {
     </Stack.Navigator>
   );
 };
+
+const styles = StyleSheet.create({
+  whiteIcon: {
+    color: colors.white,
+  },
+});
 
 export default MainStack;
