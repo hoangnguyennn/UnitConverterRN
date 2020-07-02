@@ -1,21 +1,34 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, FlatList, StyleSheet} from 'react-native';
+
+import MenuListItem from '../components/MenuListItem';
+import menuListData from '../constants/menuListData';
 
 const Home = ({navigation}) => {
   return (
-    <View style={styles.container}>
-      <Text onPress={() => navigation.navigate('UnitConversion')}>
-        Go to Unit Converter
-      </Text>
+    <View>
+      <FlatList
+        style={styles.container}
+        data={menuListData}
+        numColumns={2}
+        renderItem={({item}) => (
+          <View style={styles.itemContainer}>
+            <MenuListItem label={item.label} icon={item.icon} />
+          </View>
+        )}
+        keyExtractor={item => `${item.id}`}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding: 4,
+  },
+  itemContainer: {
+    padding: 4,
+    width: '50%',
   },
 });
 
