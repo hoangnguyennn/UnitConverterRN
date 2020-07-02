@@ -1,13 +1,15 @@
 import React from 'react';
 import {View, Text, TouchableNativeFeedback, StyleSheet} from 'react-native';
 
-const NumericKeyboardItem = ({content, onPress}) => {
+import colors from '../constants/colors';
+
+const NumericKeyboardItem = ({content, onPress, style}) => {
   return (
     <View style={styles.container}>
       {content !== null ? (
         <TouchableNativeFeedback onPress={onPress}>
           <View style={styles.content}>
-            <Text style={styles.text}>{content}</Text>
+            <Text style={{...styles.text, ...style}}>{content}</Text>
           </View>
         </TouchableNativeFeedback>
       ) : (
@@ -19,7 +21,7 @@ const NumericKeyboardItem = ({content, onPress}) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#eee',
+    backgroundColor: colors.white2,
     borderRadius: 6,
     overflow: 'hidden',
   },
@@ -30,7 +32,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 30,
-    color: '#666',
+    color: colors.text,
   },
 });
 

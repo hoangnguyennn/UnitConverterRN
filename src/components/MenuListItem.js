@@ -7,6 +7,8 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import colors from '../constants/colors';
+
 const MenuListItem = ({icon, label, onPress}) => {
   return (
     <View style={styles.shadowContainer}>
@@ -14,7 +16,7 @@ const MenuListItem = ({icon, label, onPress}) => {
         <TouchableNativeFeedback onPress={onPress}>
           <View style={styles.container}>
             <Image style={styles.image} source={icon} />
-            <Text>{label}</Text>
+            <Text style={styles.label}>{label}</Text>
           </View>
         </TouchableNativeFeedback>
       </View>
@@ -24,9 +26,9 @@ const MenuListItem = ({icon, label, onPress}) => {
 
 const styles = StyleSheet.create({
   shadowContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     borderRadius: 8,
-    shadowColor: '#000',
+    shadowColor: colors.black,
     shadowOffset: {width: 0, height: 0},
     shadowOpacity: 0,
     shadowRadius: 0.8,
@@ -44,6 +46,9 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     marginBottom: 8,
+  },
+  label: {
+    color: colors.black,
   },
 });
 

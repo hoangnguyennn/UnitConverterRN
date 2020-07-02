@@ -4,6 +4,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import NumericKeyboardItem from './NumericKeyboardItem';
+import colors from '../constants/colors';
 
 const deleteInput = <Feather name="delete" size={30} />;
 const swap = <AntDesign name="swap" size={30} />;
@@ -24,6 +25,7 @@ const NumericKeyboard = ({onPress}) => {
         <NumericKeyboardItem
           content={deleteInput}
           onPress={() => onPress('delete')}
+          style={styles.success}
         />
       </View>
       <View style={styles.itemContainer}>
@@ -36,7 +38,11 @@ const NumericKeyboard = ({onPress}) => {
         <NumericKeyboardItem content={6} onPress={() => onPress(6)} />
       </View>
       <View style={styles.itemContainer}>
-        <NumericKeyboardItem content="C" onPress={() => onPress('C')} />
+        <NumericKeyboardItem
+          content="C"
+          onPress={() => onPress('C')}
+          style={styles.danger}
+        />
       </View>
       <View style={styles.itemContainer}>
         <NumericKeyboardItem content={7} onPress={() => onPress(7)} />
@@ -71,11 +77,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     padding: 4,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
   },
   itemContainer: {
     width: '25%',
     padding: 4,
+  },
+  danger: {
+    color: colors.danger,
+  },
+  success: {
+    color: colors.success,
   },
 });
 

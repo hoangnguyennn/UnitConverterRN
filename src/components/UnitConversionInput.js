@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, TextInput, StyleSheet, Keyboard} from 'react-native';
 import {Picker} from '@react-native-community/picker';
 
+import colors from '../constants/colors';
+
 const UnitConversionInput = ({
   label,
   list,
@@ -43,11 +45,12 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   container: {
-    borderBottomColor: '#000',
+    borderBottomColor: colors.primary,
     borderBottomWidth: 2,
   },
   label: {
     fontSize: 16,
+    color: colors.primary,
   },
   inputContainer: {
     flexDirection: 'row',
@@ -57,6 +60,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 0,
     paddingVertical: 8,
     fontSize: 24,
+    color: colors.primary,
   },
   picker: {
     width: 50,

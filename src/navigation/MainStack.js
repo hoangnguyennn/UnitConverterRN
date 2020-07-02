@@ -1,6 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import colors from '../constants/colors';
 import {Home, UnitConversion, Settings} from '../screens';
 
 const Stack = createStackNavigator();
@@ -10,7 +11,12 @@ const MainStack = ({navigation}) => {
     <Stack.Navigator
       screenOptions={({route}) => {
         navigation.setOptions({gestureEnabled: route.name === 'Home'});
-        return {};
+        return {
+          headerStyle: {
+            backgroundColor: colors.primary,
+          },
+          headerTintColor: colors.white,
+        };
       }}>
       <Stack.Screen
         name="Home"

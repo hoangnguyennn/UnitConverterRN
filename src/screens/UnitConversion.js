@@ -2,6 +2,7 @@ import React, {useReducer, useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
 import Big from 'big.js';
 
+import colors from '../constants/colors';
 import UnitConversionInput from '../components/UnitConversionInput';
 import NumericKeyboard from '../components/NumericKeyboard';
 
@@ -157,7 +158,7 @@ const UnitConversion = ({route}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
   },
   inputContainer: {
     padding: 4,
