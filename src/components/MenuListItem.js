@@ -48,7 +48,9 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   label: {
-    color: colors.black,
+    color: colors.text,
+    fontFamily: 'sans-serif-medium',
+    fontWeight: 'normal',
   },
 });
 

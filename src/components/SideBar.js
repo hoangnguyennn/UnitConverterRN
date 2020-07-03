@@ -2,6 +2,7 @@ import React from 'react';
 import {View, ImageBackground, Text, StyleSheet} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 
+import I18n from '../i18n/i18n';
 import colors from '../constants/colors';
 import SideBarItem from './SideBarItem';
 
@@ -13,11 +14,11 @@ const SideBar = ({navigation}) => {
   return (
     <View>
       <ImageBackground style={styles.imageBackground}>
-        <Text style={styles.appName}>Unit Converter</Text>
+        <Text style={styles.appName}>{I18n.t('appName')}</Text>
       </ImageBackground>
       <View style={styles.container}>
         <SideBarItem
-          title="Settings"
+          title={I18n.t('Settings')}
           icon={props => <SettingsIcon {...props} />}
           onPress={() => navigation.navigate('Settings')}
         />

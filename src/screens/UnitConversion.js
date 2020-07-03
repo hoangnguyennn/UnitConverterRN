@@ -2,6 +2,7 @@ import React, {useReducer, useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
 import Big from 'big.js';
 
+import I18n from '../i18n/i18n';
 import colors from '../constants/colors';
 import UnitConversionInput from '../components/UnitConversionInput';
 import NumericKeyboard from '../components/NumericKeyboard';
@@ -134,14 +135,14 @@ const UnitConversion = ({route}) => {
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <UnitConversionInput
-          label="From"
+          label={I18n.t('From')}
           list={state.list}
           selected={state.from}
           onPickerChange={onPickerChangeFrom}
           value={state.fromValue}
         />
         <UnitConversionInput
-          label="To"
+          label={I18n.t('To')}
           list={state.list}
           selected={state.to}
           onPickerChange={onPickerChangeTo}

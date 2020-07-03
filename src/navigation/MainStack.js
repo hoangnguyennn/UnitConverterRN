@@ -3,6 +3,7 @@ import {StyleSheet} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Feather from 'react-native-vector-icons/Feather';
 
+import I18n from '../i18n/i18n';
 import colors from '../constants/colors';
 import {Home, UnitConversion, Settings} from '../screens';
 import HeaderTitle from '../components/HeaderTitle';
@@ -34,7 +35,7 @@ const MainStack = ({navigation}) => {
         component={Home}
         options={{
           headerTitle: props => (
-            <HeaderTitle {...props} title="Unit Converter" icon={MenuIcon} />
+            <HeaderTitle {...props} title={I18n.t('appName')} icon={MenuIcon} />
           ),
         }}
       />
@@ -42,10 +43,14 @@ const MainStack = ({navigation}) => {
         name="UnitConversion"
         component={UnitConversion}
         options={({route}) => ({
-          title: route.params.title,
+          title: I18n.t(route.params.title),
         })}
       />
-      <Stack.Screen name="Settings" component={Settings} />
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
+        options={{title: I18n.t('Settings')}}
+      />
     </Stack.Navigator>
   );
 };

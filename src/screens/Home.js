@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 
+import I18n from '../i18n/i18n';
 import MenuListItem from '../components/MenuListItem';
 import menuListData from '../constants/menuListData';
 
@@ -14,7 +15,7 @@ const Home = ({navigation}) => {
         renderItem={({item}) => (
           <View style={styles.itemContainer}>
             <MenuListItem
-              label={item.label}
+              label={I18n.t(item.label)}
               icon={item.icon}
               onPress={() =>
                 navigation.navigate('UnitConversion', {

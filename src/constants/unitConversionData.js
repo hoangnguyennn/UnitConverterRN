@@ -29,7 +29,7 @@ const unitConversionData = [
     {id: 1, name: 'kilo joule', code: 'kJ', value: 15062.4},
     {id: 2, name: 'joule', code: 'J', value: 15062400},
     {id: 3, name: 'kilocalorie', code: 'kcal', value: 3600},
-    {id: 4, name: 'gram calorie', code: 'cal', value: 3600000},
+    {id: 4, name: 'calorie', code: 'cal', value: 3600000},
     {id: 5, name: 'kilowatt hour', code: 'kWh', value: 4.184},
     {id: 6, name: 'watt hour', code: 'Wh', value: 4184},
   ],
