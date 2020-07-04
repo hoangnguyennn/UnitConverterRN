@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableNativeFeedback, StyleSheet} from 'react-native';
+import PropTypes from 'prop-types';
 
 import colors from '../constants/colors';
 
@@ -35,5 +36,15 @@ const styles = StyleSheet.create({
     color: colors.text,
   },
 });
+
+NumericKeyboardItem.propTypes = {
+  content: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  onPress: PropTypes.func,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+};
 
 export default NumericKeyboardItem;

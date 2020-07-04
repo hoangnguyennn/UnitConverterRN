@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, TextInput, StyleSheet, Keyboard} from 'react-native';
 import {Picker} from '@react-native-community/picker';
+import PropTypes from 'prop-types';
 
 import I18n from '../i18n/i18n';
 import colors from '../constants/colors';
@@ -74,5 +75,13 @@ const styles = StyleSheet.create({
     color: '#aaa',
   },
 });
+
+UnitConversionInput.propTypes = {
+  label: PropTypes.string.isRequired,
+  list: PropTypes.array,
+  selected: PropTypes.object,
+  onPickerChange: PropTypes.func,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+};
 
 export default UnitConversionInput;

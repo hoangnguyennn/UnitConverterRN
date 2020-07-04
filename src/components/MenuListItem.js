@@ -6,6 +6,7 @@ import {
   TouchableNativeFeedback,
   StyleSheet,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 import colors from '../constants/colors';
 
@@ -53,5 +54,24 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
   },
 });
+
+MenuListItem.propTypes = {
+  icon: PropTypes.oneOfType([
+    PropTypes.shape({
+      uri: PropTypes.string,
+      headers: PropTypes.objectOf(PropTypes.string),
+    }),
+    PropTypes.number,
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        uri: PropTypes.string,
+        width: PropTypes.number,
+        height: PropTypes.number,
+        headers: PropTypes.objectOf(PropTypes.string),
+      }),
+    ),
+  ]),
+  label: PropTypes.string.isRequired,
+};
 
 export default MenuListItem;

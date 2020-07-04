@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableNativeFeedback, StyleSheet} from 'react-native';
+import PropTypes from 'prop-types';
 
 import colors from '../constants/colors';
 
@@ -34,5 +35,11 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
   },
 });
+
+SideBarItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.func.isRequired,
+  onPress: PropTypes.func.isRequired,
+};
 
 export default SideBarItem;

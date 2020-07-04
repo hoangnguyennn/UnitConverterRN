@@ -2,6 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import PropTypes from 'prop-types';
 
 import NumericKeyboardItem from './NumericKeyboardItem';
 import colors from '../constants/colors';
@@ -90,5 +91,9 @@ const styles = StyleSheet.create({
     color: colors.success,
   },
 });
+
+NumericKeyboard.propTypes = {
+  onPress: PropTypes.func.isRequired,
+};
 
 export default NumericKeyboard;
