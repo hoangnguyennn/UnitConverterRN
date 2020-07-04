@@ -1,4 +1,4 @@
-package com.unitconverter;
+package com.hoangnguyennn.unitconverter;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
