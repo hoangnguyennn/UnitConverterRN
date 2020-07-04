@@ -7,6 +7,7 @@ import SplashScreen from 'react-native-splash-screen';
 import MainStack from './navigation/MainStack';
 import SideBar from './components/SideBar';
 import colors from './constants/colors';
+import sideMenuListData from './constants/sideMenuListData';
 
 const Drawer = createDrawerNavigator();
 
@@ -19,7 +20,10 @@ const App = () => {
     <>
       <StatusBar backgroundColor={colors.primary} barStyle="light-content" />
       <NavigationContainer>
-        <Drawer.Navigator drawerContent={props => <SideBar {...props} />}>
+        <Drawer.Navigator
+          drawerContent={props => (
+            <SideBar sideMenuData={sideMenuListData} {...props} />
+          )}>
           <Drawer.Screen name="MainStack" component={MainStack} />
         </Drawer.Navigator>
       </NavigationContainer>

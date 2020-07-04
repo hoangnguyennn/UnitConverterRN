@@ -3,6 +3,7 @@ export default {
   From: 'Từ',
   To: 'Sang',
   Settings: 'Cài đặt',
+  About: 'Về chúng tôi',
   Length: 'Chiều dài',
   Mass: 'Khối lượng',
   Speed: 'Tốc độ',

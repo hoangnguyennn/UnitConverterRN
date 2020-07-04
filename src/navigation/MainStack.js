@@ -5,7 +5,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 import I18n from '../i18n/i18n';
 import colors from '../constants/colors';
-import {Home, UnitConversion, Settings} from '../screens';
+import {Home, UnitConversion, Settings, About} from '../screens';
 import HeaderTitle from '../components/HeaderTitle';
 
 const Stack = createStackNavigator();
@@ -50,6 +50,11 @@ const MainStack = ({navigation}) => {
         name="Settings"
         component={Settings}
         options={{title: I18n.t('Settings')}}
+      />
+      <Stack.Screen
+        name="About"
+        component={About}
+        options={{title: I18n.t('About')}}
       />
     </Stack.Navigator>
   );

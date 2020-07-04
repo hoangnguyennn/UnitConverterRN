@@ -3,6 +3,7 @@ export default {
   From: 'From',
   To: 'To',
   Settings: 'Settings',
+  About: 'About us',
   Length: 'Length',
   Mass: 'Mass',
   Speed: 'Speed',
