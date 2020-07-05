@@ -38,7 +38,11 @@ const UnitConversion = ({route}) => {
 
   useEffect(() => {
     let {id} = route.params;
-    let list = unitConversionData[id - 1];
+    let list = unitConversionData[id - 1].map(item => ({
+      ...item,
+      name: I18n.t(item.name),
+    }));
+    list.sort((a, b) => a.name > b.name);
     let from = list[0];
     let to = list[1];
 

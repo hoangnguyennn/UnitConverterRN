@@ -3,7 +3,6 @@ import {View, Text, TextInput, StyleSheet, Keyboard} from 'react-native';
 import {Picker} from '@react-native-community/picker';
 import PropTypes from 'prop-types';
 
-import I18n from '../i18n/i18n';
 import colors from '../constants/colors';
 
 const UnitConversionInput = ({
@@ -30,17 +29,13 @@ const UnitConversionInput = ({
             selectedValue={selected}>
             {list &&
               list.map((item, index) => (
-                <Picker.Item
-                  label={I18n.t(item.name)}
-                  value={item}
-                  key={index}
-                />
+                <Picker.Item label={item.name} value={item} key={index} />
               ))}
           </Picker>
         </View>
       </View>
       <Text style={styles.hintText}>
-        {I18n.t(selected.name)} - {selected.code}
+        {selected.name} - {selected.code}
       </Text>
     </View>
   );

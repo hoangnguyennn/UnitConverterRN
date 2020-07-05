@@ -5,17 +5,20 @@ import I18n from '../i18n/i18n';
 import MenuListItem from '../components/MenuListItem';
 import menuListData from '../constants/menuListData';
 
+const menu = menuListData.map(item => ({...item, label: I18n.t(item.label)}));
+menu.sort((a, b) => a.label > b.label);
+
 const Home = ({navigation}) => {
   return (
     <View>
       <FlatList
         style={styles.container}
-        data={menuListData}
+        data={menu}
         numColumns={2}
         renderItem={({item}) => (
           <View style={styles.itemContainer}>
             <MenuListItem
-              label={I18n.t(item.label)}
+              label={item.label}
               icon={item.icon}
               onPress={() =>
                 navigation.navigate('UnitConversion', {

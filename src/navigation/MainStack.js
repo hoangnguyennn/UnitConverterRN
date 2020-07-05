@@ -43,7 +43,7 @@ const MainStack = ({navigation}) => {
         name="UnitConversion"
         component={UnitConversion}
         options={({route}) => ({
-          title: I18n.t(route.params.title),
+          title: route.params.title,
         })}
       />
       <Stack.Screen
