@@ -1,5 +1,11 @@
-import React from 'react';
-import {View, FlatList, StyleSheet} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {
+  View,
+  FlatList,
+  BackHandler,
+  ToastAndroid,
+  StyleSheet,
+} from 'react-native';
 
 import I18n from '../i18n/i18n';
 import MenuListItem from '../components/MenuListItem';
@@ -9,6 +15,35 @@ const menu = menuListData.map(item => ({...item, label: I18n.t(item.label)}));
 menu.sort((a, b) => a.label > b.label);
 
 const Home = ({navigation}) => {
+  const [canExit, setCanExit] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    const backAction = () => {
+      if (canExit) {
+        BackHandler.exitApp();
+      } else {
+        ToastAndroid.show('Press back again to exit', ToastAndroid.SHORT);
+        setCanExit(true);
+        timer = setTimeout(() => {
+          setCanExit(false);
+        }, 3000);
+      }
+
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+
+    return () => {
+      clearTimeout(timer);
+      backHandler.remove();
+    };
+  }, [canExit]);
+
   return (
     <View>
       <FlatList
