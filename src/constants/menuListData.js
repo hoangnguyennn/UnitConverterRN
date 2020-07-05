@@ -3,6 +3,7 @@ import mass from '../assets/images/008-scale-1.png';
 import speed from '../assets/images/012-speedometer.png';
 import energy from '../assets/images/009-scale-2.png';
 import digitalStorage from '../assets/images/003-calculator.png';
+import volume from '../assets/images/010-measuring-cup.png';
 
 const menuListData = [
   {id: 1, label: 'Length', icon: length},
@@ -10,6 +11,7 @@ const menuListData = [
   {id: 3, label: 'Speed', icon: speed},
   {id: 4, label: 'Energy', icon: energy},
   {id: 5, label: 'Digital Storage', icon: digitalStorage},
+  {id: 6, label: 'Volume', icon: volume},
 ];
 
 export default menuListData;

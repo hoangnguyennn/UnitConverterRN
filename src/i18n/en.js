@@ -9,6 +9,7 @@ export default {
   Speed: 'Speed',
   Energy: 'Energy',
   'Digital Storage': 'Digital Storage',
+  Volume: 'Volume',
   kilometer: 'kilometer',
   meter: 'meter',
   centimeter: 'centimeter',
@@ -41,4 +42,8 @@ export default {
   kilobyte: 'kilobyte',
   byte: 'byte',
   bit: 'bit',
+  'cubic meter': 'cubic meter',
+  'cubic centimeter': 'cubic centimeter',
+  liter: 'liter',
+  milliliter: 'milliliter',
 };

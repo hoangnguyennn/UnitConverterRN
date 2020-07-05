@@ -41,6 +41,12 @@ const unitConversionData = [
     {id: 5, name: 'byte', code: 'B', value: 1099511627776},
     {id: 6, name: 'bit', code: 'bit', value: 8796093022208},
   ],
+  [
+    {id: 1, name: 'cubic meter', code: 'm3', value: 1},
+    {id: 2, name: 'cubic centimeter', code: 'cm3', value: 1e6},
+    {id: 3, name: 'liter', code: 'L, l', value: 1e3},
+    {id: 4, name: 'milliliter', code: 'ml', value: 1e6},
+  ],
 ];
 
 export default unitConversionData;

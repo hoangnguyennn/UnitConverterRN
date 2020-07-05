@@ -9,6 +9,7 @@ export default {
   Speed: 'Tốc độ',
   Energy: 'Năng lượng',
   'Digital Storage': 'Lưu trữ kỹ thuật số',
+  Volume: 'Thể tích',
   mile: 'dặm',
   tonne: 'tấn',
   'kilometer per hour': 'kilometer trên giờ',
@@ -16,4 +17,6 @@ export default {
   'miles per hour': 'dặm trên giờ',
   'kilowatt hour': 'kilowatt giờ',
   'watt hour': 'watt giờ',
+  'cubic meter': 'mét khối',
+  'cubic centimeter': 'phân khối',
 };
