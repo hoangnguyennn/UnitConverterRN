@@ -8,7 +8,9 @@ import SideBarItem from './SideBarItem';
 const SideBar = ({navigation, sideMenuData}) => {
   return (
     <View>
-      <ImageBackground style={styles.imageBackground}>
+      <ImageBackground
+        style={styles.imageBackground}
+        source={require('../assets/images/sidebar-bg.png')}>
         <Text style={styles.appName}>{I18n.t('appName')}</Text>
       </ImageBackground>
       <View style={styles.container}>
@@ -28,8 +30,8 @@ const SideBar = ({navigation, sideMenuData}) => {
 const styles = StyleSheet.create({
   imageBackground: {
     padding: 16,
-    paddingTop: 48,
-    backgroundColor: colors.primary,
+    paddingTop: 60,
+    paddingBottom: 16,
   },
   appName: {
     color: colors.white,

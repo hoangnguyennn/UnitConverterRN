@@ -17,7 +17,6 @@ const SideBarItem = ({title, icon: Icon, onPress}) => {
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: '#69b3fee6',
     marginBottom: 4,
     padding: 16,
     borderRadius: 6,
