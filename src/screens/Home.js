@@ -21,6 +21,7 @@ const Home = ({navigation}) => {
     let timer;
     const backAction = () => {
       if (canExit) {
+        clearTimeout(timer);
         BackHandler.exitApp();
       } else {
         ToastAndroid.show('Press back again to exit', ToastAndroid.SHORT);
@@ -39,7 +40,6 @@ const Home = ({navigation}) => {
     );
 
     return () => {
-      clearTimeout(timer);
       backHandler.remove();
     };
   }, [canExit]);
