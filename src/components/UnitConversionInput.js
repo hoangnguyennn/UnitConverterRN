@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, TextInput, StyleSheet, Keyboard} from 'react-native';
-import {Picker} from '@react-native-community/picker';
 import PropTypes from 'prop-types';
 
+import FilterPicker from './FilterPicker';
 import colors from '../constants/colors';
 
 const UnitConversionInput = ({
@@ -23,15 +23,14 @@ const UnitConversionInput = ({
             value={value.toString()}
             showSoftInputOnFocus={false}
           />
-          <Picker
-            style={styles.picker}
+          <FilterPicker
+            data={list}
+            renderItem={({item}) => (
+              <FilterPicker.Item label={item.name} subLabel={item.code} />
+            )}
             onValueChange={onPickerChange}
-            selectedValue={selected}>
-            {list &&
-              list.map((item, index) => (
-                <Picker.Item label={item.name} value={item} key={index} />
-              ))}
-          </Picker>
+            filter={item => item.name}
+          />
         </View>
       </View>
       <Text style={styles.hintText}>
