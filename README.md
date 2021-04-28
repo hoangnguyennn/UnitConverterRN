@@ -15,12 +15,12 @@ Simple unit converter app using React Native (only Android - because I don't hav
 ## Usage
 
 Clone this repo and run command to install all packages used:
-```
+```bash
   $ yarn install
 ```
 
 Next, run following command to create .apk file:
-```
+```bash
   $ cd android
   $ ./gradlew assembleRelease
 ```
